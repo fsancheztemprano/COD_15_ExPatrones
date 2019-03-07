@@ -1,4 +1,4 @@
-package adaptadores;
+package e4_adaptador;
 
 public class MP3 implements MediaPlayer {
 
