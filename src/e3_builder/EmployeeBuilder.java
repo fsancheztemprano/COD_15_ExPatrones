@@ -15,11 +15,18 @@ public class EmployeeBuilder {
    private int hireMonth;
    private int hireDate;
 
+   /*
+   Atributos obligatorios en el constructor
+   */
     public EmployeeBuilder(String firstName, long id) {
         this.firstName = firstName;
         this.id = id;
     }
 
+    
+    /*
+    Atributos opcionales en forma de setters que retornan un objeto EmployeeBuilder
+    */
     public EmployeeBuilder setLastName(String lastName) {
         this.lastName = lastName;
         return this;
@@ -60,6 +67,10 @@ public class EmployeeBuilder {
         return this;
     }
     
+    /*
+    metodo createEmployee() que retorna un objeto Employee con 
+    todos los atributos opcionales que le determinemos previamente
+    */
     public Employee createEmployee(){
         return new Employee(lastName, middleName, firstName, id, birthYear, birthMonth, birthDate, hireYear, hireMonth, hireDate);
     }

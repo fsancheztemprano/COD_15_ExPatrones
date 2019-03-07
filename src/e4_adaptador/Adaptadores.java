@@ -11,13 +11,25 @@ public class Adaptadores {
         player.play("file.avi");
         
         
-        
+        /*
+        instanciamos un objeto de la interfaz MediaDivX
+        */
         MediaDivX dx = new DivX();
         dx.playFilm("video1.divx");
         
-        dx = new DivXAdapter(new MP4());
+        /*
+        instanciamos un objeto de la interfaz MediaPackage 
+        clase MP4 utilizando el DivXAdapter para poder 
+        llamar al metodo playFilm()
+        */
+        dx = new DivXAdapter(new MP4());//
         dx.playFilm("video2.mp4");
         
+        /*
+        instanciamos un objeto de la interfaz MediaPackage 
+        clase VLC utilizando el DivXAdapter para poder 
+        llamar al metodo playFilm()
+        */        
         dx = new DivXAdapter(new VLC());
         dx.playFilm("video3.vlc");
     }
@@ -36,9 +48,17 @@ public class Adaptadores {
             media.playFile(filename);
         }
     }
-    
+    /**
+     * Adapter:
+     * adapta cualquier clase que implemente mediaPackage 
+     * para adaptarla a una clase DIVX
+     */
     private static class DivXAdapter implements MediaDivX{
-        
+        /*
+        recibimos el obj MediaPackage como un atributo del 
+        constructor para hacer un llamado a su 
+        metodo playFile()
+        */
         private MediaPackage media;
         
         public DivXAdapter(MediaPackage m){
