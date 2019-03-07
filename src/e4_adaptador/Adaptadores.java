@@ -37,7 +37,7 @@ public class Adaptadores {
         }
     }
     
-    public static class DivXAdapter implements MediaDivX{
+    private static class DivXAdapter implements MediaDivX{
         
         private MediaPackage media;
         
